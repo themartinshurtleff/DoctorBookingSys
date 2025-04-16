@@ -1,14 +1,11 @@
 /**
- * Doctor.java
- *
- * This is a subclass of Person, used to create Doctor objects
- *
  * @author James Frink
  * Section: CSC-331-001
- *
- * Purpose: to create Doctor objects
+ * Date: 4/14/2025
+ * Purpose: This is a subclass of Person, used to create Doctor objects.
  */
 public class Doctor extends Person{
+    // Instance variables
     private String specialty;
     private int yearsExp;
 
@@ -25,31 +22,31 @@ public class Doctor extends Person{
         this.specialty=specialty;
         this.yearsExp=yearsExp;
     }
-    //Accessors
+
     /**
-     * This method gets specialty
+     * This method gets the doctor's specialty
      * @return String specialty
      */
     public String getSpecialty(){return specialty;}
     /**
-     * This method gets yearsExp
+     * This method gets the doctor's years of experience
      * @return int yearsExp
      */
     public int getYearsExp(){return yearsExp;}
-    //Mutators
+
     /**
-     * This method sets specialty
+     * This method sets the doctor's specialty
      * @param specialty = the doctor's specialty
      */
     public void setSpecialty(String specialty){this.specialty=specialty;}
     /**
-     * This method sets yearsExp
+     * This method sets the doctor's years of experience
      * @param yearsExp = the doctor's years of experience
      */
     public void setYearsExp(int yearsExp){this.yearsExp=yearsExp;}
-    /**
-     *
-     */
-    //@Override
 
+    @Override
+    public String toString(){
+        return String.format("%s%nSpecialty: %s%nYears experience: %d%n", super.toString(), specialty, yearsExp);
+    }
 }
