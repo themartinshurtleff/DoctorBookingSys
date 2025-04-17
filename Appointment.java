@@ -2,7 +2,7 @@
  * @author: Ayushman Singh.
  * Course: CSC-331-001.
  * Date: 04/16/2024.
- * Purpose:This is the appointment class.
+ * Purpose: This is the appointment class for creating Appointments for Patients.
  */
 public class Appointment {
     //Instance Variables.
@@ -12,7 +12,6 @@ public class Appointment {
     private String apptTime;
     private Doctor apptDoc;
     private Patient apptPat;
-    //Constructor.
 
     /**
      * The appointment constructor with 6 parameters.
@@ -37,7 +36,7 @@ public class Appointment {
      * @return String apptLocation.
      */
     public String getApptLocation(){
-        return this.apptLocation;
+        return apptLocation;
     }
 
     /**
@@ -45,7 +44,7 @@ public class Appointment {
      * @return String apptType.
      */
     public String getApptType(){
-        return this.apptType;
+        return apptType;
     }
 
     /**
@@ -53,7 +52,7 @@ public class Appointment {
      * @return String apptDate.
      */
     public String getApptDate(){
-        return this.apptDate;
+        return apptDate;
     }
 
     /**
@@ -61,7 +60,7 @@ public class Appointment {
      * @return String apptTime.
      */
     public String getApptTime(){
-        return this.apptTime;
+        return apptTime;
     }
 
     /**
@@ -69,7 +68,7 @@ public class Appointment {
      * @return Doctor apptDoc.
      */
     public Doctor getApptDoc(){
-        return this.apptDoc;
+        return apptDoc;
     }
 
     /**
@@ -77,7 +76,7 @@ public class Appointment {
      * @return Patient apptPat.
      */
     public Patient getApptPat(){
-        return this.apptPat;
+        return apptPat;
     }
 
     /**
@@ -127,13 +126,13 @@ public class Appointment {
     public void setApptPat(Patient apptPat){
         this.apptPat=apptPat;
     }
-    //Override.
+
     @Override
     /**
      * The toString() method of the Appointment class.
      * @return A formatted string displaying the required appointment details.
      */
     public String toString(){
-        return String.format("Patient: %s%nDoctor: %s%nType: %s%nDate: %s%nTime: %s%nLocation: %s%n",apptPat,apptDoc,apptType,apptDate,apptTime,apptLocation);
+        return String.format("Appt Location: %s%nAppt Type: %s%nAppt Date: %s%nAppt Time: %s%nAppt Doctor: %s%nAppt Patient: %s%n", apptLocation, apptType, apptDate, apptTime, apptDoc.getName(), apptPat.getName());
     }
 }
