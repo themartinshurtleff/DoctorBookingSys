@@ -1,5 +1,5 @@
 /**
- * @author Daniel Novak, [NAME HERE]
+ * @author Daniel Novak
  * Date: 4/17/2025
  * Course: CSC-355-003
  * Purpose: This is the controller for ApptCancelConfirmScreen. It handles the actual cancellation of
@@ -82,7 +82,9 @@ public class ApptCancelConfirmController {
             // Using the currentAppt variable, remove the user's selected appointment
             // from the program data.
             // Use ProgramData.apptsList to access the program's list of appointments.
-            System.out.println("*****CODE HERE!!!!!*****");
+            if (ProgramData.apptsList.contains(currentAppt)){
+                ProgramData.apptsList.remove(currentAppt);
+            }
 
             // Upon successful removal of Appointment object, return to the Main Menu
             FXMLLoader loader = new FXMLLoader(getClass().getResource("MainMenuScreen.fxml"));

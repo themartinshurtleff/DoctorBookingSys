@@ -1,5 +1,5 @@
 /**
- * @author Daniel Novak, [NAME HERE]
+ * @author Daniel Novak
  * Date: 4/16/2025
  * Course: CSC-331-003
  * Purpose: This is the controller for ApptConfirmScreen. It is responsible for actually
@@ -39,7 +39,7 @@ public class ApptConfirmController {
     // Variables to hold appointment info
     private String apptLocation;
     private String apptType;
-    private String apptDocName;
+    private Doctor apptDoc;
     private String apptDate;
     private String apptTime;
 
@@ -76,11 +76,9 @@ public class ApptConfirmController {
     @FXML
     void onConfirmBtnClick(ActionEvent event) throws IOException{
         try{
-            // Using the variables holding appointment info (ex: apptLocation),
-            // create a new Appointment object.
-            // Use ProgramData.userPatient to get the patient.
-            // Add the new Appointment to ProgramData.apptsList.
-            System.out.println("*****CODE HERE!!!*******");
+            // Using the user's given appointment information, create a new
+            // Appointment object and add it to apptsList.
+            ProgramData.apptsList.add(new Appointment(apptLocation, apptType, apptDate, apptTime, apptDoc, ProgramData.userPatient));
 
             // Upon successful creation of Appointment object, return to the Main Menu
             FXMLLoader loader = new FXMLLoader(getClass().getResource("MainMenuScreen.fxml"));
@@ -96,23 +94,23 @@ public class ApptConfirmController {
 
     /**
      * Takes the appointment data given in the previous screen does 2 things:
-     * 1. Assign them to local variables for creating an Appointment object
+     * 1. Assigns them to local variables for creating an Appointment object
      * 2. Changes the corresponding label texts to display appointment info
      * @param apptLocation
      * @param apptType
-     * @param docName
+     * @param apptDoc
      * @param date
      * @param time
      */
-    public void displayApptInfo(String apptLocation, String apptType, String docName, String date, String time){
+    public void displayApptInfo(String apptLocation, String apptType, Doctor apptDoc, String date, String time){
         this.apptLocation = apptLocation;
         lblLocation.setText("Location: " + apptLocation);
 
         this.apptType = apptType;
         lblType.setText("Type: " + apptType);
 
-        this.apptDocName = docName;
-        lblDoctor.setText("Doctor: " + docName);
+        this.apptDoc = apptDoc;
+        lblDoctor.setText("Doctor: " + apptDoc.getName());
 
         this.apptDate = date;
         lblDate.setText("Date: " + date);

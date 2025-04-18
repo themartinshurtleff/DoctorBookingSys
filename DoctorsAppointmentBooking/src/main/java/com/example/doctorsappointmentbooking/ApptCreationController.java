@@ -33,7 +33,7 @@ public class ApptCreationController implements Initializable {
     private ChoiceBox<String> cbxApptType;
 
     @FXML
-    private ChoiceBox<String> cbxDoctorType;
+    private ChoiceBox<Doctor> cbxDoctorType;
 
     @FXML
     private DatePicker dteDate;
@@ -81,7 +81,7 @@ public class ApptCreationController implements Initializable {
             // Get appointment data provided by the user
             String locationSelected = cbxApptLocation.getValue();
             String typeSelected = cbxApptType.getValue();
-            String docSelected = cbxDoctorType.getValue();
+            Doctor docSelected = cbxDoctorType.getValue();
             String dateSelected = dteDate.getValue().toString();
             String timeSelected = txtTime.getText();
 
@@ -94,7 +94,7 @@ public class ApptCreationController implements Initializable {
 
             // Check to make sure that user provided the appropriate data
             // If at least one spot is empty, throw an error.
-            if (locationSelected.isEmpty() || typeSelected.isEmpty() || docSelected.isEmpty() ||
+            if (locationSelected.isEmpty() || typeSelected.isEmpty() || docSelected.toString().isEmpty() ||
                 dateSelected.isEmpty() || timeSelected.isEmpty()){
                 throw new NullPointerException();
             }
@@ -137,7 +137,7 @@ public class ApptCreationController implements Initializable {
         Doctor currentDoctor;
         for (int i=0; i<ProgramData.doctorsList.size(); i++){
             currentDoctor = ProgramData.doctorsList.get(i);
-            cbxDoctorType.getItems().add(currentDoctor.getName());
+            cbxDoctorType.getItems().add(currentDoctor);
         }
 
         // Set the error label to be invisible
