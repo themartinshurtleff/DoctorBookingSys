@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.doctorsappointmentbooking.ApptConfirmController">
+   <children>
+      <Label layoutX="25.0" layoutY="24.0" text="Appointment Creation">
+         <font>
+            <Font name="System Bold" size="26.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblLocation" alignment="CENTER" layoutX="162.0" layoutY="97.0" prefHeight="23.0" prefWidth="275.0" text="Location: [Location]">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblType" alignment="CENTER" layoutX="162.0" layoutY="120.0" prefHeight="23.0" prefWidth="275.0" text="Type: [Type]">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblDoctor" alignment="CENTER" layoutX="162.0" layoutY="143.0" prefHeight="23.0" prefWidth="275.0" text="Doctor: [Doctor name]">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblDate" alignment="CENTER" layoutX="162.0" layoutY="166.0" prefHeight="23.0" prefWidth="275.0" text="Date: [Date]">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblTime" alignment="CENTER" layoutX="162.0" layoutY="189.0" prefHeight="23.0" prefWidth="275.0" text="Time: [Time]">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="127.0" layoutY="239.0" text="Review the information above to make sure all details are correct." />
+      <Label layoutX="87.0" layoutY="256.0" text="Press &quot;Confirm&quot; to confirm the appointment or &quot;Cancel&quot; to return to main menu." />
+      <Button layoutX="230.0" layoutY="307.0" mnemonicParsing="false" onAction="#onConfirmBtnClick" prefHeight="38.0" prefWidth="59.0" text="Confirm" />
+      <Button layoutX="310.0" layoutY="307.0" mnemonicParsing="false" onAction="#onCancelBtnClick" prefHeight="38.0" prefWidth="59.0" text="Cancel" />
+   </children>
+</AnchorPane>

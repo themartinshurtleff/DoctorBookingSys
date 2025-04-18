@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.doctorsappointmentbooking.ApptCreationController">
+   <children>
+      <Label layoutX="25.0" layoutY="24.0" text="Appointment Creation">
+         <font>
+            <Font name="System Bold" size="26.0" />
+         </font>
+      </Label>
+      <Label layoutX="161.0" layoutY="81.0" text="Where would you like to have the appointment?" />
+      <ChoiceBox fx:id="cbxApptLocation" layoutX="165.0" layoutY="106.0" prefWidth="150.0" />
+      <Label layoutX="165.0" layoutY="146.0" text="What type of appointment are you scheduling?" />
+      <ChoiceBox fx:id="cbxApptType" layoutX="165.0" layoutY="171.0" prefWidth="150.0" />
+      <Label layoutX="165.0" layoutY="206.0" text="Which doctor would you like to see?" />
+      <ChoiceBox fx:id="cbxDoctorType" layoutX="165.0" layoutY="230.0" prefWidth="150.0" />
+      <Label layoutX="165.0" layoutY="266.0" text="What date and time would you like to be seen?" />
+      <TextField fx:id="txtTime" layoutX="290.0" layoutY="291.0" prefHeight="25.0" prefWidth="119.0" promptText="Time (0:00 AM/PM)" />
+      <Button layoutX="310.0" layoutY="344.0" mnemonicParsing="false" onAction="#onContinueBtnClick" text="Continue" />
+      <DatePicker fx:id="dteDate" layoutX="165.0" layoutY="291.0" prefHeight="25.0" prefWidth="105.0" promptText="Date" />
+      <Button layoutX="185.0" layoutY="344.0" mnemonicParsing="false" onAction="#onBackBtnClick" prefHeight="25.0" prefWidth="65.0" text="Back" />
+      <Label fx:id="lblError" layoutX="438.0" layoutY="172.0" prefHeight="115.0" prefWidth="127.0" text="ERROR: Please provide all appointment details." textFill="RED" wrapText="true" />
+   </children>
+</AnchorPane>

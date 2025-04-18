@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.doctorsappointmentbooking.MainMenuController">
+   <children>
+      <Label fx:id="lblGreeting" alignment="CENTER" layoutX="27.0" layoutY="45.0" prefHeight="47.0" prefWidth="544.0" text="Hello!">
+         <font>
+            <Font name="System Bold" size="32.0" />
+         </font>
+      </Label>
+      <Button fx:id="btnCreateAppt" layoutX="77.0" layoutY="168.0" mnemonicParsing="false" onAction="#onCreateApptClick" prefHeight="64.0" prefWidth="139.0" text="Create appointment" />
+      <Button fx:id="btnViewAppts" layoutX="231.0" layoutY="168.0" mnemonicParsing="false" onAction="#onViewApptClick" prefHeight="64.0" prefWidth="139.0" text="View appointments" />
+      <Button fx:id="btnCancelAppt" layoutX="386.0" layoutY="168.0" mnemonicParsing="false" onAction="#onCancelApptClick" prefHeight="64.0" prefWidth="139.0" text="Cancel appointment" />
+      <Button fx:id="btnExit" layoutX="259.0" layoutY="308.0" mnemonicParsing="false" onAction="#onExitButtonClick" prefHeight="39.0" prefWidth="83.0" text="Exit" />
+      <Label layoutX="223.0" layoutY="92.0" text="Choose an option below.">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
