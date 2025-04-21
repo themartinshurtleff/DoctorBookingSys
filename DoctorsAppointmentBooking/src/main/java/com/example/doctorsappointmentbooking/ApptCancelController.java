@@ -2,8 +2,9 @@
  * @author Daniel Novak
  * Date: 4/17/2025
  * Course: CSC-331-003
- * Purpose: This is the controller for ApptCancelScreen. It displays a list of the user's
- * currently scheduled appointments like ApptViewScreen, but the user can select one to cancel.
+ * Purpose: This is the controller for ApptCancelScreen.
+ * It displays a list of the user's currently scheduled appointments like
+ * ApptViewScreen, but the user can select one to cancel.
  */
 
 package com.example.doctorsappointmentbooking;
@@ -69,9 +70,9 @@ public class ApptCancelController implements Initializable {
             // Get the user's currently selected appointment.
             Appointment selectedAppt = lstApptList.getSelectionModel().getSelectedItem();
 
-            // Given that an appointment was selected, grab appointment info from the corresponding
-            // Appointment object and assign them to local variables for passing to the
-            // next screen
+            // Given that an appointment was selected, grab appointment info and
+            // assign it to local variables for passing to ApptCancelConfirmScreen
+            // for cancellation confirmation.
             if (selectedAppt != null){
                 String locationSelected = selectedAppt.getApptLocation();
                 String typeSelected = selectedAppt.getApptType();
@@ -79,7 +80,7 @@ public class ApptCancelController implements Initializable {
                 String dateSelected = selectedAppt.getApptDate();
                 String timeSelected = selectedAppt.getApptTime();
 
-                // Load ApptCancelConfirmScreen and pass the data onto that screen
+                // Load ApptCancelConfirmScreen and pass the appointment data onto that screen
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("ApptCancelConfirmScreen.fxml"));
                 root = loader.load();
                 ApptCancelConfirmController confirmControl = loader.getController();
@@ -95,7 +96,8 @@ public class ApptCancelController implements Initializable {
     }
 
     /**
-     * Upon bringing up ApptViewScreen, populate lstApptList with data.
+     * Upon bringing up ApptViewScreen, populate the appointment list with
+     * the user's appointments, if there are any.
      * @param url
      * @param bund
      */
@@ -119,6 +121,5 @@ public class ApptCancelController implements Initializable {
             btnContinue.setDisable(false);
         }
     }
-
 }
 

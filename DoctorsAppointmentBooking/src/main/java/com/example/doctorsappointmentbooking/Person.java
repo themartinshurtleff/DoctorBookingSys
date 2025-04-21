@@ -5,7 +5,7 @@ package com.example.doctorsappointmentbooking;
  * Date: 4/14/2025
  * Section: CSC-331-001
  * Purpose: This class is an abstract template class which subclasses Doctor and Patient will inherit
- * key attributes from.
+ * key attributes from, including their name, phone number, and age.
  */
 
 public abstract class Person {
@@ -15,7 +15,8 @@ public abstract class Person {
     private int age;
 
     /**
-     * A three parameter constructor for Persons
+     * A three parameter constructor for Persons. This is called when either a new Doctor
+     * or Patient is created.
      * @param name = the name of the person
      * @param phoneNumber = the person's phone number
      * @param age = the person's age
@@ -58,6 +59,10 @@ public abstract class Person {
      */
     public void setAge(int age){this.age=age;}
 
+    /**
+     * This provides an output displaying basic information about a Person.
+     * @return Person information
+     */
     @Override
     public String toString(){
         return String.format("Name: %s%nPhone number: %s%nAge: %d", name, phoneNumber, age);

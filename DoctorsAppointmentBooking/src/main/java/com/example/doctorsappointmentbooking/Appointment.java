@@ -4,7 +4,9 @@ package com.example.doctorsappointmentbooking;
  * @author: Ayushman Singh.
  * Course: CSC-331-001.
  * Date: 04/16/2024.
- * Purpose: This is the appointment class for creating Appointments for Patients.
+ * Purpose: The Appointment class holds important information about appointments
+ * created by patients. It also stores Doctor and Patient objects, according to
+ * what patient scheduled it and what doctor will be seen.
  */
 public class Appointment {
     //Instance Variables.
@@ -34,7 +36,7 @@ public class Appointment {
     }
 
     /**
-     * Getter method for apptLocation.
+     * Getter method for Appointment Location (In-person or virtual).
      * @return String apptLocation.
      */
     public String getApptLocation(){
@@ -42,7 +44,8 @@ public class Appointment {
     }
 
     /**
-     * Getter method for Appointment Type.
+     * Getter method for Appointment Type (New Patient Establishment, Physical Exam,
+     * Medical Test, Urgent Care, or Consultation).
      * @return String apptType.
      */
     public String getApptType(){
@@ -66,7 +69,7 @@ public class Appointment {
     }
 
     /**
-     * Getter Method for Appointment Doctor.
+     * Getter Method for which Doctor is being seen at the appointment.
      * @return Doctor apptDoc.
      */
     public Doctor getApptDoc(){
@@ -74,7 +77,7 @@ public class Appointment {
     }
 
     /**
-     * Getter method for Appointment Patient.
+     * Getter method for which Patient scheduled the appointment.
      * @return Patient apptPat.
      */
     public Patient getApptPat(){
@@ -82,7 +85,7 @@ public class Appointment {
     }
 
     /**
-     * Setter method for Appointment Location.
+     * Setter method for Appointment Location (In-person or virtual).
      * @param apptLocation
      */
     public void setApptLocation(String apptLocation){
@@ -90,7 +93,8 @@ public class Appointment {
     }
 
     /**
-     * Setter method for Appointment Type.
+     * Setter method for Appointment Type (New Patient Establishment, Physical Exam,
+     *      * Medical Test, Urgent Care, or Consultation).
      * @param apptType
      */
     public void setApptType(String apptType){
@@ -114,7 +118,7 @@ public class Appointment {
     }
 
     /**
-     * Setter Method for Appointment Doctor.
+     * Setter Method for which Doctor is being seen at the appointment.
      * @param apptDoc
      */
     public void setApptDoc(Doctor apptDoc){
@@ -122,7 +126,7 @@ public class Appointment {
     }
 
     /**
-     * Setter method for Appointment Patient.
+     * Setter method for which Patient scheduled the appointment.
      * @param apptPat
      */
     public void setApptPat(Patient apptPat){
@@ -132,7 +136,8 @@ public class Appointment {
     @Override
     /**
      * The toString() method of the Appointment class.
-     * @return A formatted string displaying the required appointment details.
+     * This is used in ApptViewScreen and ApptCancelScreen to list appointment details.
+     * @return Appointment details.
      */
     public String toString(){
         return String.format("%s with Dr. %s --- %s --- %s at %s", apptType, apptDoc.getName(),

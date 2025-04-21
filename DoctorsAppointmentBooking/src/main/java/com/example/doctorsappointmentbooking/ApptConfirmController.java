@@ -2,8 +2,10 @@
  * @author Daniel Novak
  * Date: 4/16/2025
  * Course: CSC-331-003
- * Purpose: This is the controller for ApptConfirmScreen. It is responsible for actually
- * adding the user's new appointment to apptsList.
+ * Purpose: This is the controller for ApptConfirmScreen.
+ * It checks to see whether the user wishes to confirm their new appointment.
+ * If the user confirms, the appointment is added to apptsList in ProgramData,
+ * officially scheduling the appointment.
  */
 
 package com.example.doctorsappointmentbooking;
@@ -68,8 +70,8 @@ public class ApptConfirmController {
     }
 
     /**
-     * Upon clicking the "Confirm" button, add the user's new appointment to apptsList
-     * and return to the main menu.
+     * Upon clicking the "Confirm" button, adds the user's new appointment to apptsList
+     * and returns to the main menu.
      * @param event
      * @throws IOException
      */
@@ -94,7 +96,7 @@ public class ApptConfirmController {
 
     /**
      * Takes the appointment data given in the previous screen does 2 things:
-     * 1. Assigns them to local variables for creating an Appointment object
+     * 1. Assigns them to local variables to get ready to create an Appointment object
      * 2. Changes the corresponding label texts to display appointment info
      * @param apptLocation
      * @param apptType

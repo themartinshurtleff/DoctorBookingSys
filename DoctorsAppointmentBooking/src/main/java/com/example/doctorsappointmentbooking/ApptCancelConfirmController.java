@@ -2,8 +2,8 @@
  * @author Daniel Novak
  * Date: 4/17/2025
  * Course: CSC-355-003
- * Purpose: This is the controller for ApptCancelConfirmScreen. It handles the actual cancellation of
- * appointments, thereby removing the appointment from apptsList.
+ * Purpose: This is the controller for ApptCancelConfirmScreen.
+ * It handles the actual cancellation of appointments, thereby removing the cancelled appointment from the system.
  */
 
 package com.example.doctorsappointmentbooking;
@@ -79,9 +79,7 @@ public class ApptCancelConfirmController {
     @FXML
     void onConfirmBtnClick(ActionEvent event) throws IOException{
         try{
-            // Using the currentAppt variable, remove the user's selected appointment
-            // from the program data.
-            // Use ProgramData.apptsList to access the program's list of appointments.
+            // Remove the user's cancelled appointment from apptsList in ProgramData
             if (ProgramData.apptsList.contains(currentAppt)){
                 ProgramData.apptsList.remove(currentAppt);
             }

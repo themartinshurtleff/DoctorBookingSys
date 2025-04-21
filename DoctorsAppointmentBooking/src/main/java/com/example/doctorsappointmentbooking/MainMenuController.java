@@ -2,7 +2,8 @@
  * @author Daniel Novak
  * Course: CSC-331-003
  * Date: 4/14/2025
- * Purpose: Controller file for the main menu screen of the program.
+ * Purpose: Controller file for the main menu screen of the program. This contains
+ * mutliple buttons for the user to access the main functions of the program.
  */
 
 package com.example.doctorsappointmentbooking;
@@ -43,7 +44,7 @@ public class MainMenuController {
 
     /**
      * Upon clicking "Create Appointment", takes the user to the Appointment Creation screen
-     * to create an appointment.
+     * to create a new appointment.
      * @param event
      * @throws IOException
      */
@@ -68,7 +69,6 @@ public class MainMenuController {
      * @throws IOException
      */
 
-    // ***NOTE: Maybe find a way to deny access if the user has no currently scheduled appointments?***
     @FXML
     void onViewApptClick(ActionEvent event) throws IOException{
         try {

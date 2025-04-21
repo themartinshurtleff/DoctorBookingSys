@@ -2,7 +2,9 @@
  * @author Daniel Novak
  * Course: CSC-331-003
  * Date: 4/14/2025
- * Purpose: Controller file for the login screen of the program.
+ * Purpose: Controller file for the login screen of the program. This screen asks the user
+ * for their name. If their name is in ProgramData, they are granted access to the Main Menu,
+ * where they can access the main functions of the program.
  */
 
 package com.example.doctorsappointmentbooking;
@@ -42,7 +44,7 @@ public class LoginController {
     @FXML
     public void onLoginClick(ActionEvent event) throws IOException {
 
-        // Get the name given by the user
+        // Get the name given by the user and store this in a temporary String variable
         String username = txtPatientName.getText();
 
         // Variables to help with name searching
@@ -51,10 +53,9 @@ public class LoginController {
         Patient currentPatient;
 
         // Until either the name is found in the Patient ArrayList or the counter
-        // exceeds the size of the ArrayList, search it for the name
-        // given by the user.
-        // If the name is found, mark nameFound equal to true and store the patient's data
-        // into userPatient.
+        // exceeds the size of the ArrayList, search it for the name given by the user.
+        // If the name is found, mark nameFound equal to true, store the patient's data
+        // into userPatient, and break out of the loop.
         while (!nameFound && counter < ProgramData.patientsList.size()){
             currentPatient = ProgramData.patientsList.get(counter);
             if (currentPatient.getName().equalsIgnoreCase(username)){
@@ -65,13 +66,13 @@ public class LoginController {
             }
         }
 
-        // If the name was found in the ArrayList, load the Main Menu.
+        // If the name was found in the ArrayList, load the Main Menu, passing
+        // their name to be displayed in the program greeting label.
         if (nameFound){
             FXMLLoader loader = new FXMLLoader(getClass().getResource("MainMenuScreen.fxml"));
             root = loader.load();
             MainMenuController mainController = loader.getController();
             mainController.displayName(username);
-
             stage = (Stage)((Node)event.getSource()).getScene().getWindow();
             scene = new Scene(root);
             stage.setScene(scene);

@@ -17,13 +17,18 @@ public class Patient extends Person{
 
     /**
      * Constructor for Patient
+     * This takes in the attributes inherited from person and also adds
+     * information about the Patient's list of health issues.
      * @param name
      * @param phoneNumber
      * @param age
      * @param healthIssues
      */
     public Patient(String name, String phoneNumber, int age, ArrayList<String> healthIssues){
+        // Call the Person constructor
         super(name, phoneNumber, age);
+
+        // Set up specific Patient attributes
         this.healthIssues = healthIssues;
     }
 
@@ -50,8 +55,11 @@ public class Patient extends Person{
      * @param issue A user-provided health issue
      */
     public void removeIssue(String issue){
+        // Set up a String to hold the current issue indexed.
         String currentIssue;
 
+        // Search the list for the issue that the user provided.
+        // If found, remove it from the list.
         for (int i=0; i<healthIssues.size(); i++){
             currentIssue = healthIssues.get(i);
             if (currentIssue.equals(issue)){
@@ -60,6 +68,13 @@ public class Patient extends Person{
         }
     }
 
+    /**
+     * Patient's toString returns information regarding the patient.
+     * This uses super.toString() to call the toString of Person for output
+     * of name, phone number, and age. Patient will then also output the patient's
+     * list of health issues.
+     * @return Information regarding Patient.
+     */
     @Override
     public String toString(){
         return String.format("%s%nHealth issues: %s%n", super.toString(), healthIssues.toString());

@@ -2,7 +2,8 @@
  * @author Daniel Novak
  * Course: CSC-331-003
  * Date: 4/14/2025
- * Purpose: Main starter file that boots up the program to the log-in screen.
+ * Purpose: Main starter file that the program is run from. This starts the program to
+ * the log-in screen.
  */
 
 package com.example.doctorsappointmentbooking;
@@ -22,10 +23,10 @@ public class MainApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
 
-        // Populate the ArrayLists with data
+        // Populate the ProgramData ArrayLists with data
         ProgramData.populateData();
 
-        // Load the program
+        // Load the program, starting from the log-in screen.
         try{
             FXMLLoader fxmlLoader = new FXMLLoader(MainApplication.class.getResource("LoginScreen.fxml"));
             Scene scene = new Scene(fxmlLoader.load());
@@ -34,10 +35,15 @@ public class MainApplication extends Application {
             stage.setResizable(false);
             stage.show();
         } catch (IOException e) {
+            // If the corresponding FXML file is missing, display an error message in the console.
             System.out.println("ERROR: FXML not found!");
         }
     }
 
+    /**
+     * Simply call the launch method to begin the program.
+     * @param args
+     */
     public static void main(String[] args) {
         launch();
     }

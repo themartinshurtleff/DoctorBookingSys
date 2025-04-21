@@ -2,8 +2,8 @@
  * @author Daniel Novak
  * Date: 4/17/2025
  * Course: CSC-331-003
- * Purpose: This is the controller for ApptViewScreen. This shows the user their currently
- * scheduled appointments.
+ * Purpose: This is the controller for ApptViewScreen.
+ * This shows the user their currently scheduled appointments.
  */
 
 package com.example.doctorsappointmentbooking;
@@ -52,12 +52,14 @@ public class ApptViewController implements Initializable {
     }
 
     /**
-     * Upon bringing up ApptViewScreen, populate lstApptList with data.
+     * Upon bringing up ApptViewScreen, populate the appointment list with
+     * the user's appointments, if there are any.
      * @param url
      * @param bund
      */
     @Override
     public void initialize(URL url, ResourceBundle bund){
+        // Instance variable of Appointment for appointment search
         Appointment currentAppt;
 
         // Search apptsList to see if the user patient has any appointments scheduled.

@@ -2,7 +2,8 @@
  * @author Daniel Novak
  * Date: 4/16/2025
  * Course: CSC-331-003
- * Purpose: This is the controller for ApptCreationScreen. It will get appointment data from the user.
+ * Purpose: This is the controller for ApptCreationScreen.
+ * It will get appointment data from the user for a potential new appointment.
  */
 
 package com.example.doctorsappointmentbooking;
@@ -86,20 +87,21 @@ public class ApptCreationController implements Initializable {
             String timeSelected = txtTime.getText();
 
             // Check to make sure that the time provided by the user contains
-            // AM Or PM.
-            // If it does not, throw an error.
+            // AM or PM.
+            // If it does not, throw an IllegalArgumentException error.
             if (!(timeSelected.contains("AM") || timeSelected.contains("PM"))){
                 throw new IllegalArgumentException();
             }
 
-            // Check to make sure that user provided the appropriate data
-            // If at least one spot is empty, throw an error.
+            // Next, check to make sure that user provided the appropriate data
+            // If at least one spot is empty, throw an NullPointerException error.
             if (locationSelected.isEmpty() || typeSelected.isEmpty() || docSelected.toString().isEmpty() ||
                 dateSelected.isEmpty() || timeSelected.isEmpty()){
                 throw new NullPointerException();
             }
 
-            // Load ApptConfirmScreen and pass the data onto that screen
+            // If the data provided has no errors, load ApptConfirmScreen, passing the provided data
+            // onto that screen for appointment confirmation.
             FXMLLoader loader = new FXMLLoader(getClass().getResource("ApptConfirmScreen.fxml"));
             root = loader.load();
             ApptConfirmController confirmControl = loader.getController();
@@ -108,12 +110,15 @@ public class ApptCreationController implements Initializable {
             scene = new Scene(root);
             stage.setScene(scene);
             stage.show();
+
         } catch (NullPointerException e) {
             // If a piece of appointment information is missing, display the error message
             // in lblError.
             lblError.setText("ERROR: Please provide all appointment details.");
             lblError.setVisible(true);
         } catch (IllegalArgumentException e){
+            // If the time provided did not specify AM or PM, display the error message
+            // in lblError.
             lblError.setText("ERROR: Time provided must contain either AM or PM.");
             lblError.setVisible(true);
         } catch (IOException e){
@@ -129,7 +134,8 @@ public class ApptCreationController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle bund){
 
-        // Populate choiceboxes with data
+        // Populate choiceboxes with data regarding where patients can schedule appointments
+        // and what appointment types they can choose from
         cbxApptLocation.getItems().addAll("In-person", "Virtual");
         cbxApptType.getItems().addAll("New Patient Establishment", "Physical Exam", "Medical Test", "Urgent Care", "Consultation");
 
@@ -140,7 +146,7 @@ public class ApptCreationController implements Initializable {
             cbxDoctorType.getItems().add(currentDoctor);
         }
 
-        // Set the error label to be invisible
+        // Upon this screen being loaded, set the error label to be invisible
         lblError.setVisible(false);
     }
 }
