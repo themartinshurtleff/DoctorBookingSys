@@ -1,4 +1,8 @@
 /**
+ * MainApplication.java
+ *
+ * This class is what starts the program.
+ *
  * @author Daniel Novak
  * Course: CSC-331-003
  * Date: 4/14/2025
@@ -17,8 +21,8 @@ import java.io.IOException;
 public class MainApplication extends Application {
     /**
      * Start method that starts the program from the log-in screen.
-     * @param stage
-     * @throws IOException
+     * @param stage = the FXML file's stage
+     * @throws IOException = exception capture
      */
     @Override
     public void start(Stage stage) throws IOException {
@@ -42,7 +46,7 @@ public class MainApplication extends Application {
 
     /**
      * Simply call the launch method to begin the program.
-     * @param args
+     * @param args = arguments
      */
     public static void main(String[] args) {
         launch();

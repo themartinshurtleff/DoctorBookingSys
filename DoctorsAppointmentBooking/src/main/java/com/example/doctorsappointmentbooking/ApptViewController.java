@@ -1,4 +1,8 @@
 /**
+ * ApptViewController.java
+ *
+ * This is the controller class of ApptViewScreen.
+ *
  * @author Daniel Novak
  * Date: 4/17/2025
  * Course: CSC-331-003
@@ -34,8 +38,8 @@ public class ApptViewController implements Initializable {
 
     /**
      * Upon clicking the back button, the program returns back to the main menu.
-     * @param event
-     * @throws IOException
+     * @param event = action event
+     * @throws IOException = exception capture
      */
     @FXML
     void onBackBtnClick(ActionEvent event) {
@@ -54,8 +58,8 @@ public class ApptViewController implements Initializable {
     /**
      * Upon bringing up ApptViewScreen, populate the appointment list with
      * the user's appointments, if there are any.
-     * @param url
-     * @param bund
+     * @param url = URL
+     * @param bund = resource bundle
      */
     @Override
     public void initialize(URL url, ResourceBundle bund){

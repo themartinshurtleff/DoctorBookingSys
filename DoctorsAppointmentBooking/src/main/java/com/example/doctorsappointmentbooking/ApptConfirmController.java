@@ -1,4 +1,8 @@
 /**
+ * ApptConfirmController.java
+ *
+ * This is the controller class for ApptConfirmScreen.
+ *
  * @author Daniel Novak
  * Date: 4/16/2025
  * Course: CSC-331-003
@@ -52,8 +56,8 @@ public class ApptConfirmController {
 
     /**
      * Upon clicking the cancel button, the program returns back to the main menu.
-     * @param event
-     * @throws IOException
+     * @param event = action event
+     * @throws IOException = exception capture
      */
     @FXML
     void onCancelBtnClick(ActionEvent event) throws IOException {
@@ -72,8 +76,8 @@ public class ApptConfirmController {
     /**
      * Upon clicking the "Confirm" button, adds the user's new appointment to apptsList
      * and returns to the main menu.
-     * @param event
-     * @throws IOException
+     * @param event = action event
+     * @throws IOException = exception capture
      */
     @FXML
     void onConfirmBtnClick(ActionEvent event) throws IOException{
@@ -98,11 +102,11 @@ public class ApptConfirmController {
      * Takes the appointment data given in the previous screen does 2 things:
      * 1. Assigns them to local variables to get ready to create an Appointment object
      * 2. Changes the corresponding label texts to display appointment info
-     * @param apptLocation
-     * @param apptType
-     * @param apptDoc
-     * @param date
-     * @param time
+     * @param apptLocation = the appointment's location
+     * @param apptType = the appointment's type
+     * @param apptDoc = the appointment's doctor
+     * @param date = the appointment's date
+     * @param time = the appointment's time
      */
     public void displayApptInfo(String apptLocation, String apptType, Doctor apptDoc, String date, String time){
         this.apptLocation = apptLocation;

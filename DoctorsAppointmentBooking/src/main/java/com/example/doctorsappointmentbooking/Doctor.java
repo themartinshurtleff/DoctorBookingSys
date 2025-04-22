@@ -1,7 +1,7 @@
 package com.example.doctorsappointmentbooking;
 
 /**
- * @author James Frink
+ * @author James Frink, Ayushman Singh
  * Section: CSC-331-001
  * Date: 4/14/2025
  * Purpose: This is a subclass of Person, used to create Doctor objects.
@@ -57,7 +57,7 @@ public class Doctor extends Person{
      * Doctor's toString simply returns the doctor's name.
      * This is used in FXML scenes such as ApptCreationScreen, where
      * we need a Doctor object to store in a potential Appointment, but
-     * we only want the Doctor's name to be visible in the doctor choicebox.
+     * we only want the Doctor's name to be visible to the user in the doctor choicebox.
      * @return Doctor name
      */
     @Override

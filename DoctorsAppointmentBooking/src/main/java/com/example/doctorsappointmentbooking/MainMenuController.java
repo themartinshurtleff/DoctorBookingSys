@@ -65,8 +65,8 @@ public class MainMenuController {
     /**
      * Upon clicking the "View Appointments" button, takes the user to the View Appointments screen
      * to see their list of scheduled appointments.
-     * @param event
-     * @throws IOException
+     * @param event = action event
+     * @throws IOException = exception capture
      */
 
     @FXML
@@ -86,8 +86,8 @@ public class MainMenuController {
     /**
      * Upon clicking the "Cancel Appointment" button, takes the user to the Cancel Appointment
      * screen to cancel an appointment.
-     * @param event
-     * @throws IOException
+     * @param event = action event
+     * @throws IOException = exception capture
      */
     @FXML
     void onCancelApptClick(ActionEvent event) throws IOException{
@@ -105,7 +105,7 @@ public class MainMenuController {
 
     /**
      * Upon clicking the "Exit" button, exits the program.
-     * @param event
+     * @param event = action event
      */
     @FXML
     public void onExitButtonClick(ActionEvent event){

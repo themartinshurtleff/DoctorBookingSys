@@ -1,4 +1,8 @@
 /**
+ * ApptCancelController.java
+ *
+ * This is the controller class for ApptCancelScreen.
+ *
  * @author Daniel Novak
  * Date: 4/17/2025
  * Course: CSC-331-003
@@ -42,8 +46,8 @@ public class ApptCancelController implements Initializable {
 
     /**
      * Upon clicking the back button, the program returns back to the main menu.
-     * @param event
-     * @throws IOException
+     * @param event = action event
+     * @throws IOException = exception capture
      */
     @FXML
     void onBackBtnClick(ActionEvent event) {
@@ -62,7 +66,8 @@ public class ApptCancelController implements Initializable {
     /**
      * Upon clicking the "Continue" button, get info from the appointment selected
      * by the user and pass it onto ApptCancelConfirmScreen.
-     * @param event
+     * @param event = action event
+     * @throws IOException = exception capture
      */
     @FXML
     void onContinueBtnClick(ActionEvent event) throws IOException{
@@ -98,7 +103,7 @@ public class ApptCancelController implements Initializable {
     /**
      * Upon bringing up ApptViewScreen, populate the appointment list with
      * the user's appointments, if there are any.
-     * @param url
+     * @param url = URL
      * @param bund
      */
     @Override

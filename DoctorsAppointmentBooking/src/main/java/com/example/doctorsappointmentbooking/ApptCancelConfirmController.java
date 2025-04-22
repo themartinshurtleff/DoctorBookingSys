@@ -1,4 +1,8 @@
 /**
+ * ApptCancelConfirmController.java
+ *
+ * This is the controller class for ApptCancelConfirmScreen.
+ *
  * @author Daniel Novak
  * Date: 4/17/2025
  * Course: CSC-355-003
@@ -53,8 +57,8 @@ public class ApptCancelConfirmController {
 
     /**
      * Upon clicking the back button, the program returns back to the main menu.
-     * @param event
-     * @throws IOException
+     * @param event = action event
+     * @throws IOException = exception capture
      */
     @FXML
     void onBackBtnClick(ActionEvent event) {
@@ -73,8 +77,8 @@ public class ApptCancelConfirmController {
     /**
      * Upon clicking the "Confirm" button, remove the user's selected appointment from apptsList
      * and return to the main menu.
-     * @param event
-     * @throws IOException
+     * @param event = action event
+     * @throws IOException = exception capture
      */
     @FXML
     void onConfirmBtnClick(ActionEvent event) throws IOException{
@@ -100,11 +104,11 @@ public class ApptCancelConfirmController {
      * Takes the appointment data given in the previous screen does 2 things:
      * 1. Assign the selected Appointment to a local variable
      * 2. Changes the label texts to display appointment info
-     * @param apptLocation
-     * @param apptType
-     * @param docName
-     * @param date
-     * @param time
+     * @param apptLocation = the appointment's location
+     * @param apptType = the appointment's type
+     * @param docName = the appointment's doctor's name
+     * @param date = the appointment's date
+     * @param time = the appointment's time
      */
     public void displayApptInfo(String apptLocation, String apptType, String docName, String date, String time, Appointment currentAppt){
         // Assign the user's selected appointment to a local Appointment variable.

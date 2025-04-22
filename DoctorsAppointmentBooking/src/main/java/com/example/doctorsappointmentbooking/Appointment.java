@@ -1,6 +1,10 @@
 package com.example.doctorsappointmentbooking;
 
 /**
+ * Appointment.java
+ *
+ * This class stores information created by the user.
+ *
  * @author: Ayushman Singh.
  * Course: CSC-331-001.
  * Date: 04/16/2024.

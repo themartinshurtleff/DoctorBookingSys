@@ -1,4 +1,8 @@
 /**
+ * ProgramData.java
+ *
+ * This is the central hub for collected data.
+ *
  * @author Daniel Novak
  * Course: CSC-331-003
  * Date: 4/16/2025
@@ -49,7 +53,7 @@ public class ProgramData {
         patientsList.add(new Patient("Crow T. Robot", "123-342-3452" , 36, new ArrayList<>() {{add("Mechanical Issues"); add("Fatigue");}}));
         patientsList.add(new Patient("GPC", "124-345-3452", 36, new ArrayList<>() {{add("Anxiety"); add("Fatigue");}}));
 
-        // Add a sample appointment
+        // Add a sample appointment for Tom Servo
         apptsList.add(new Appointment("In-Person", "Physical Exam", "2025-04-17", "4:00 PM", doctorsList.get(1), patientsList.get(0)));
     }
 }

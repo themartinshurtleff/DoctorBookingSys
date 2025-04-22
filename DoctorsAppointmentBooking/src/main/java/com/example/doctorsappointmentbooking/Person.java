@@ -34,12 +34,12 @@ public abstract class Person {
     public String getName(){return name;}
     /**
      * This method gets the phone number of a person
-     * @return phoneNumber
+     * @return String phoneNumber
      */
     public String getPhoneNumber(){return phoneNumber;}
     /**
      * This method gets the age of a person
-     * @return age
+     * @return int age
      */
     public int getAge(){return age;}
 

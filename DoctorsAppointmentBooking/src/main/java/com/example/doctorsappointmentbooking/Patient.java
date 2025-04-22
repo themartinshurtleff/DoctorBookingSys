@@ -1,4 +1,8 @@
 /**
+ * Patient.java
+ *
+ * This subclass of Person.java will create Patient objects.
+ *
  * @author Daniel Novak
  * Date: 4/14/2025
  * Course: CSC-331-003
@@ -19,10 +23,10 @@ public class Patient extends Person{
      * Constructor for Patient
      * This takes in the attributes inherited from person and also adds
      * information about the Patient's list of health issues.
-     * @param name
-     * @param phoneNumber
-     * @param age
-     * @param healthIssues
+     * @param name = the name of the patient
+     * @param phoneNumber = the patient's phone number
+     * @param age = the patient's age
+     * @param healthIssues = the patient's health issues
      */
     public Patient(String name, String phoneNumber, int age, ArrayList<String> healthIssues){
         // Call the Person constructor
@@ -43,7 +47,7 @@ public class Patient extends Person{
     /**
      * Given a user-provided health issue, this method adds it to the patient's list of
      * health issues.
-     * @param issue A user-provided health issue
+     * @param issue = A user-provided health issue
      */
     public void addIssue(String issue){
         healthIssues.add(issue);
@@ -52,7 +56,7 @@ public class Patient extends Person{
     /**
      * Given a user-provided health issue, this method removes it from the patient's list of
      * health issues if it exists in the list.
-     * @param issue A user-provided health issue
+     * @param issue = A user-provided health issue
      */
     public void removeIssue(String issue){
         // Set up a String to hold the current issue indexed.

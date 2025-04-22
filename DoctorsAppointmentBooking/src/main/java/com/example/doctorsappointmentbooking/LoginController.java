@@ -1,4 +1,8 @@
 /**
+ * LoginController.java
+ *
+ * This is the controller class for the program's login screen.
+ *
  * @author Daniel Novak
  * Course: CSC-331-003
  * Date: 4/14/2025
@@ -38,8 +42,8 @@ public class LoginController {
      * Upon the click of the Log-in button, the program does two things:
      * 1. Verify that the given name exists in the "database" (i.e. Patient ArrayList) of the program
      * 2. If it exists, log-in the user and pass their name onto the greeting label of the main menu.
-     * @param event
-     * @throws IOException
+     * @param event = action event
+     * @throws IOException = exception capture
      */
     @FXML
     public void onLoginClick(ActionEvent event) throws IOException {

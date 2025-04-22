@@ -1,4 +1,8 @@
 /**
+ * ApptCreationController.java
+ *
+ * This is the controller class for ApptCreationScreen.
+ *
  * @author Daniel Novak
  * Date: 4/16/2025
  * Course: CSC-331-003
@@ -52,8 +56,8 @@ public class ApptCreationController implements Initializable {
 
     /**
      * Upon clicking the back button, the program returns back to the main menu.
-     * @param event
-     * @throws IOException
+     * @param event = action event
+     * @throws IOException = exception capture
      */
     @FXML
     void onBackBtnClick(ActionEvent event) throws IOException {
@@ -73,8 +77,8 @@ public class ApptCreationController implements Initializable {
      * Upon clicking the "Continue" button, the program will try to get appointment data
      * provided by the user from the controls. If all data is provided, it is passed
      * onto ApptConfirmScreen.
-     * @param event
-     * @throws IOException
+     * @param event = action event
+     * @throws IOException = exception capture
      */
     @FXML
     void onContinueBtnClick(ActionEvent event) throws IOException{
@@ -128,8 +132,8 @@ public class ApptCreationController implements Initializable {
 
     /**
      * Upon creation of the ApptCreationScreen, populate the choiceboxes with data.
-     * @param url
-     * @param bund
+     * @param url = URL
+     * @param bund = resource bundle
      */
     @Override
     public void initialize(URL url, ResourceBundle bund){
